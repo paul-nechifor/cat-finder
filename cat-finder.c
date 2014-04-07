@@ -74,7 +74,7 @@ void afisare(int mat[100][100], int n, int m)
 	{
 		putchar('|');
 		for (j=0; j<m; j++)
-			if (mat[i][j] == 1) printf("##");
+			if (mat[i][j] == 1) printf("[]");
 			else if (mat[i][j] == GOL) printf("  ");
 			else printf("..");
 		puts("|");
