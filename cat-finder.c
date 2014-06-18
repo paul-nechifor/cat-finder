@@ -69,17 +69,17 @@ int* generare(int *lung, int nelem, int *aflat, int nbiti)
 void afisare(int mat[100][100], int n, int m)
 {
 	int i, j;
-	printf("/");   for (i=0; i<m; i++) printf("--");   printf("\\\n");
+	printf("┌");   for (i=0; i<m; i++) printf("──");   printf("┐\n");
 	for (i=0; i<n; i++)
 	{
-		putchar('|');
+		printf("│");
 		for (j=0; j<m; j++)
-			if (mat[i][j] == 1) printf("[]");
+			if (mat[i][j] == 1) printf("██");
 			else if (mat[i][j] == GOL) printf("  ");
-			else printf("..");
-		puts("|");
+			else printf("▒▒");
+		puts("│");
 	}
-	printf("\\");   for (i=0; i<m; i++) printf("--");   printf("/\n");
+	printf("└");   for (i=0; i<m; i++) printf("──");   printf("┘\n");
 }
 int main(void)
 {
@@ -128,7 +128,6 @@ int main(void)
 		for (j=0; j<coloane; j++)
 			matrice[i][j] = MULTE;
 
-
 	int corect[100] = {5, 15};
 	int selcol[100];
 	int* sigurul;
@@ -166,7 +165,5 @@ int main(void)
 		afisare(matrice, linii, coloane);
 		if (!modificat) break;
 	}
-
-	printf("Sfarsit\n");
 	return 0;
 }
